@@ -18,7 +18,7 @@ const props = defineProps<{ city: City }>()
 const weather = ref<any>(null)
 
 onMounted(async () => {
-  const apiKey = '102ef8e72212aeaa9dfb8eeb3bae22c7'; // TODO: Protect this API key
+  const apiKey = 'dummy API key'; // TODO: Protect this API key
   const response = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${props.city.lat}&lon=${props.city.lon}&units=metric&appid=${apiKey}`
   )
