@@ -1,6 +1,6 @@
 <template>
-  <div class="city-weather-detail">
-    <span class="city-weather-detail__back" @click="goBack"> &lt; </span>
+  <div class="city-detail">
+    <span class="city-detail__back" @click="goBack"> &lt; </span>
 
     <div v-if="city">
       <h2>Weather in {{ city.name }}, {{ city.country }}</h2>
