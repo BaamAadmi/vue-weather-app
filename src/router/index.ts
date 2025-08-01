@@ -1,19 +1,19 @@
 import { RouteRecordRaw, createRouter, createWebHistory } from 'vue-router';
 
-import CityDetailView from '../features/city/city-detail/CityDetailView.vue';
-import CityListView from '../features/city/city-list/CityListView.vue';
+import CityDetailComponent from '../features/city/city-detail/CityDetailComponent.vue';
+import CityListComponent from '../features/city/city-list/CityListComponent.vue';
 import ProfileDetail from '../features/profile/ProfileDetail.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'CityList',
-    component: CityListView
+    component: CityListComponent
   },
   {
     path: '/city/:id',
     name: 'CityDetail',
-    component: CityDetailView
+    component: CityDetailComponent
   },
   {
     path: '/profile',
