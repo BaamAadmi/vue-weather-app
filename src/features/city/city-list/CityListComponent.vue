@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useCityStore } from '../model/city';
+import { useCityStore } from '../model/City';
 
 
 const cityStore = useCityStore();

@@ -11,7 +11,7 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import router from '../../../router';
-import { useCityStore } from '../model/city';
+import { useCityStore } from '../model/City';
 import CityDetailComponent from './CityDetailComponent.vue';
 
 const route = useRoute()

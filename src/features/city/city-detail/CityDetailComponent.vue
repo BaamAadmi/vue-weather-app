@@ -11,7 +11,7 @@
 
 <script lang="ts" setup>
 import { defineProps, onMounted, ref } from 'vue';
-import { City } from '../model/city';
+import { City } from '../model/City';
 
 
 const props = defineProps<{ city: City }>()
