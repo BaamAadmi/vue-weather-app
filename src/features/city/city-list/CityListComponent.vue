@@ -2,7 +2,7 @@
   <div class="city-list">
     <div class="city-list_header">
         <h2>Weather</h2> 
-        <div @click="gotToProfile()" class="city-list_profile"></div> 
+        <div @click="goToProfile()" class="city-list_profile"></div> 
     </div>
     <div class="city-list_body">
       <div
@@ -21,6 +21,7 @@
 import { useRouter } from 'vue-router';
 import { useCityStore } from '../model/City';
 
+
 const cityStore = useCityStore();
 const router = useRouter()
 
@@ -28,7 +29,7 @@ const goToDetail = (cityId: number) => {
   router.push(`/city/${cityId}`)
 }
 
-const gotToProfile = ()=> {
+const goToProfile = ()=> {
    router.push(`/profile`);
 }
 
