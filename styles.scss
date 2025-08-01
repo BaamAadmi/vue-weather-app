@@ -1,2 +1,16 @@
 @use "./src/features/city/city-detail/CityDetailStyle.scss";
 @use "./src/features/city/city-list/CityListStyle.scss";
+
+
+
+@font-face {
+  font-family: 'SF Display';
+  src: url('@/assets/fonts/SFPRODISPLAYREGULAR.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+  font-family: 'SF Display', sans-serif;
+}
