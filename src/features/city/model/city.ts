@@ -1,4 +1,3 @@
-
 export interface City {
   id: number;
   country?: string;

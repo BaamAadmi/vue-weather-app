@@ -1,5 +1,4 @@
 export interface WeatherBasic {
-  
   coord: {
     lon: number;
     lat: number;

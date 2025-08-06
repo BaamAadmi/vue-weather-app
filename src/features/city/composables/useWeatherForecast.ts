@@ -28,7 +28,6 @@ export function useWeatherForecast(city: City) {
         console.warn('Forecast fetch failed or invalid data; not caching');
         forecast.value = null;
       }
-
     } catch (error) {
       console.error('Forecast fetch error:', error);
       forecast.value = null;

@@ -6,31 +6,33 @@ import { useWeatherBasic } from '../composables/useWeatherBasic';
 import { City } from '../model/city';
 
 const props = defineProps<{
-  city: City
-}>()
-const { weather, loading } = useWeatherBasic(props.city);
-const router = useRouter()
+  city: City;
+}>();
+const { weather } = useWeatherBasic(props.city);
+const router = useRouter();
 
 const isDaytime = computed(() => {
   if (!weather.value || !weather.value.sys) return true; // default to day
   return (
-    weather.value.dt >= weather.value.sys.sunrise &&
-    weather.value.dt < weather.value.sys.sunset
+    weather.value.dt >= weather.value.sys.sunrise && weather.value.dt < weather.value.sys.sunset
   );
 });
 
-onMounted(()=> {
+onMounted(() => {
   console.log(weather);
-})
-
+});
 
 const openDetails = () => {
   router.push(`/city/${props.city.id}`);
-}
+};
 </script>
 
 <template>
-  <div @click="openDetails" :class="['city-card', { 'city-card--night': !isDaytime }]" aria-label="Weather Information">
+  <div
+    @click="openDetails"
+    :class="['city-card', { 'city-card--night': !isDaytime }]"
+    aria-label="Weather Information"
+  >
     <div class="city-card__top">
       <div class="city-card__location">
         <div class="city-card__location-name">{{ city.name }}</div>
@@ -44,18 +46,24 @@ const openDetails = () => {
     </div>
 
     <div class="city-card__bottom">
-      <p v-if="weather && weather.weather" class="city-card__condition" aria-label="Weather Condition">
+      <p
+        v-if="weather && weather.weather"
+        class="city-card__condition"
+        aria-label="Weather Condition"
+      >
         {{ weather.weather[0].main }} - {{ weather.weather[0].description }}
       </p>
 
-      <div v-if="weather && weather.main" class="city-card__high-low" aria-label="Temperature Range">
+      <div
+        v-if="weather && weather.main"
+        class="city-card__high-low"
+        aria-label="Temperature Range"
+      >
         <span class="city-card__high-temp">{{ weather.main.temp_min }}°C</span>
         <span class="city-card__low-temp">{{ weather.main.temp_max }}°C</span>
       </div>
     </div>
   </div>
 </template>
-
-
 
 <style lang="scss" src="./CityCard.scss"></style>

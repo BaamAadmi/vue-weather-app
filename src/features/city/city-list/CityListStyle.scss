@@ -1,8 +1,8 @@
 .city-list {
-   display: flex;
-   flex-direction: column;
-   width: 100%;
-   padding: 0 5px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 5px;
   .city-list_header {
     display: flex;
     flex-direction: row;
@@ -16,14 +16,14 @@
     order: 0;
     align-self: stretch;
     flex-grow: 0;
-    h2{
-    font-weight: 700;
-    font-size: 37px;
-    line-height: 100%; 
+    h2 {
+      font-weight: 700;
+      font-size: 37px;
+      line-height: 100%;
     }
     .city-list_profile {
       display: flex;
-      background: url("@/assets/images/profile-icon.svg") no-repeat center center;
+      background: url('@/assets/images/profile-icon.svg') no-repeat center center;
       background-size: contain;
       width: 24px;
       height: 24px;

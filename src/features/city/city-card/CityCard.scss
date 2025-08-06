@@ -1,5 +1,5 @@
 .city-card {
-  background-image: url("@/assets/images/day.jpg");
+  background-image: url('@/assets/images/day.jpg');
   background-repeat: repeat-y;
   background-size: cover;
   background-position: center;
@@ -15,7 +15,7 @@
   gap: 20px;
 
   &--night {
-    background-image: url("@/assets/images/night.jpg");
+    background-image: url('@/assets/images/night.jpg');
   }
 
   &__top {

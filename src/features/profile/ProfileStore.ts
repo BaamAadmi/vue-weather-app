@@ -1,9 +1,9 @@
-import { reactive } from "vue";
+import { reactive } from 'vue';
 
 export interface Profile {
-    name: string;
-    email: string;
-    mobile: string;
+  name: string;
+  email: string;
+  mobile: string;
 }
 
 export const userProfileStore = reactive({
@@ -11,4 +11,3 @@ export const userProfileStore = reactive({
   email: 'sudeep.avon@gmail.com',
   mobile: '987654321',
 });
-

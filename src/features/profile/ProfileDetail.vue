@@ -8,7 +8,6 @@
 <script setup lang="ts">
 import ProfileForm from './profile-form/ProfileForm.vue';
 import ProfileSummary from './profile-summary/ProfileSummary.vue';
-
 </script>
 
 <style scoped>

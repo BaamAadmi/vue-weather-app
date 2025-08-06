@@ -24,12 +24,11 @@ export function useWeatherBasic(city: City) {
       const data = await fetchCurrentWeather(city.lat, city.lon);
       if (data && !data.error) {
         weather.value = data as WeatherBasic;
-        LocalStorageService.setItem(cacheKey, data, 3600); 
+        LocalStorageService.setItem(cacheKey, data, 3600);
       } else {
         console.warn('Weather fetch failed or incomplete data; not caching');
         weather.value = null;
       }
-
     } catch (err) {
       console.error('Fetch failed:', err);
       weather.value = null;
