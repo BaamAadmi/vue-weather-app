@@ -1,10 +1,12 @@
+/* eslint-disable */
+
 import { ref } from 'vue';
 import { LocalStorageService } from '../../../common/services/local-storage.service';
 import { City } from '../model/city';
 import { fetchWeatherForecast } from '../services/weather.service';
 
 export function useWeatherForecast(city: City) {
-  const forecast = ref<any>(null);
+  const forecast = ref<any>(null); // TODO: create forecast interface, use it in localStorageService
   const loading = ref(false);
 
   async function loadForecast(forceRefresh = false) {

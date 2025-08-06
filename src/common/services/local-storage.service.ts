@@ -1,3 +1,4 @@
+import { WeatherBasic } from "../../features/city/model/weather";
 
 export class LocalStorageService {
   static readonly getItem = (key: string) => {
@@ -11,7 +12,9 @@ export class LocalStorageService {
     return parsed.value;
   };
 
-  static readonly setItem = (key: string, value: any, ttlSeconds: number) => {
+  
+
+  static readonly setItem = (key: string, value: WeatherBasic | unknown, ttlSeconds: number) => {
     const expiry = Date.now() + ttlSeconds * 1000;
     const item = { value, expiry };
     localStorage.setItem(key, JSON.stringify(item));

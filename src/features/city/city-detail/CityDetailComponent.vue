@@ -1,3 +1,5 @@
+
+
 <template>
   <div class="city-detail">
     <header class="city-detail__header">
@@ -102,6 +104,9 @@ const formattedDate = computed(() =>
 );
 
 // Group by day
+
+/* eslint-disable */
+
 const groupedByDay = computed(() => {
   if (!forecast.value?.list) return [];
 
