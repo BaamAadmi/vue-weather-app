@@ -37,7 +37,7 @@ const openDetails = () => {
       <div class="city-card__location">
         <div class="city-card__location-name">{{ city.name }}</div>
         <p v-if="weather && weather.dt" class="city-card__location-time">
-          {{ DateUtilsService.localTimeFromTimestamp(weather.dt) }}
+          {{ DateUtilsService.localTimeFromUTCOffset(weather.timezone) }}
         </p>
       </div>
       <div v-if="weather" class="city-card__temperature" aria-label="Current Temperature">
@@ -59,8 +59,8 @@ const openDetails = () => {
         class="city-card__high-low"
         aria-label="Temperature Range"
       >
-        <span class="city-card__high-temp">{{ weather.main.temp_min }}°C</span>
-        <span class="city-card__low-temp">{{ weather.main.temp_max }}°C</span>
+        <span class="city-card__high-temp">H {{ weather.main.temp_min }}°C</span>
+        <span class="city-card__low-temp">L {{ weather.main.temp_max }}°C</span>
       </div>
     </div>
   </div>

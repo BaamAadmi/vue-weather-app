@@ -7,6 +7,7 @@ import { fetchCurrentWeather } from '../services/weather.service';
 export function useWeatherBasic(city: City) {
   const weather = ref<WeatherBasic | null>(null);
   const loading = ref(false);
+  const ttlSeconds: number = 60;
 
   async function loadWeather(forceRefresh = false) {
     loading.value = true;
@@ -24,7 +25,7 @@ export function useWeatherBasic(city: City) {
       const data = await fetchCurrentWeather(city.lat, city.lon);
       if (data && !data.error) {
         weather.value = data as WeatherBasic;
-        LocalStorageService.setItem(cacheKey, data, 3600);
+        LocalStorageService.setItem(cacheKey, data, ttlSeconds);
       } else {
         console.warn('Weather fetch failed or incomplete data; not caching');
         weather.value = null;

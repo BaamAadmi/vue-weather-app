@@ -1,8 +1,9 @@
 export class DateUtilsService {
-  static readonly localTimeFromTimestamp = (dt: number): string => {
-    const timestamp = dt * 1000;
-    const dateObject = new Date(timestamp);
-    return dateObject.toLocaleTimeString();
+  static readonly localTimeFromUTCOffset = (offsetInSeconds: number): string => {
+  const utcDate = new Date();
+  const offsetInMilliseconds = offsetInSeconds * 1000;
+  const localTime = new Date(utcDate.getTime() + offsetInMilliseconds);
+  return localTime.toLocaleTimeString();
   };
 
   static readonly formatTime = (dt_txt: string): string => {
