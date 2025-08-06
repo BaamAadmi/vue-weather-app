@@ -1,0 +1,84 @@
+.city-card {
+  background-image: url("@/assets/images/day.jpg");
+  background-repeat: repeat-y;
+  background-size: cover;
+  background-position: center;
+
+  height: 117px;
+  opacity: 1;
+  border-radius: 16px;
+  color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &--night {
+    background-image: url("@/assets/images/night.jpg");
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+    height: 63px;
+    justify-content: space-between;
+  }
+
+  &__location {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__location-name {
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 100%;
+    letter-spacing: -1%;
+    height: 30px;
+  }
+
+  &__location-time {
+    height: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1%;
+  }
+
+  &__temperature {
+    display: flex;
+    align-items: center;
+  }
+
+  &__temperature-value {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+  }
+
+  &__condition {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  &__high-low {
+    font-size: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  &__high-temp,
+  &__low-temp {
+    font-weight: bold;
+  }
+}

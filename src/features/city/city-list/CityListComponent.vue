@@ -5,28 +5,33 @@
         <div @click="goToProfile()" class="city-list_profile"></div> 
     </div>
     <div class="city-list_body">
-      <div
+      <CityCard
         v-for="city in cityStore.cities"
-        :key="city.id"
-        class="city-card"
-        @click="goToDetail(city.id)"
-      >
-        {{ city.name }}
-      </div>
+        :key="city.name"
+        :city="city"
+        @click="selectCity(city.name)"
+      />
+
+       
+      
     </div>
  </div>
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
-import { useCityStore } from '../model/City';
+import CityCard from '../city-card/CityCard.vue';
+import { useCityStore } from '../stores/cityStore';
 
+const selectedCity = ref<string | null>(null)
 
 const cityStore = useCityStore();
 const router = useRouter()
 
-const goToDetail = (cityId: number) => {
-  router.push(`/city/${cityId}`)
+
+const selectCity = (name: string) => {
+  selectedCity.value = name
 }
 
 const goToProfile = ()=> {
