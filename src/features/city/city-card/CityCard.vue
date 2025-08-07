@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, onMounted } from 'vue';
+import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { DateUtilsService } from '../../../common/services/date-utils.service';
 import { useWeatherBasic } from '../composables/useWeatherBasic';
@@ -16,10 +16,6 @@ const isDaytime = computed(() => {
   return (
     weather.value.dt >= weather.value.sys.sunrise && weather.value.dt < weather.value.sys.sunset
   );
-});
-
-onMounted(() => {
-  console.log(weather);
 });
 
 const openDetails = () => {
