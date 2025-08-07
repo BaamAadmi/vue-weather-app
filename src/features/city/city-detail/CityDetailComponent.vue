@@ -1,5 +1,3 @@
-
-
 <template>
   <div class="city-detail">
     <header class="city-detail__header">
@@ -23,7 +21,7 @@
         Last Update {{ lastUpdated }}
         <button
           class="city-detail__nav-refresh"
-          @click="loadForecast()"
+          @click="loadForecast(true)"
           aria-label="Refresh weather"
         >
           ⟳
