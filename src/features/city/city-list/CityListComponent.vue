@@ -5,6 +5,7 @@
       <div @click="goToProfile()" class="city-list_profile"></div>
     </div>
     <div class="city-list_search">
+      <i class="city-list_search__icon"></i>
       <input
         id="input-city-filter"
         v-model="searchString"
