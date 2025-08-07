@@ -26,11 +26,11 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref } from 'vue';
+import { computed, defineAsyncComponent, ref } from 'vue';
 import { useRouter } from 'vue-router';
-import CityCard from '../city-card/CityCard.vue';
 import { useCityStore } from '../stores/cityStore';
 
+const CityCard = defineAsyncComponent(() => import('../city-card/CityCard.vue'));
 const selectedCity = ref<string | null>(null);
 const cityStore = useCityStore();
 const router = useRouter();
