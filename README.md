@@ -9,6 +9,8 @@ NodeJs & NPM must be installed on the development machine
 ## Installation and Development server
 
 Perform `npm install` after cloning the repository
+Run `npm run dev` to start Development Server to get the app running in Action.
+You can format using prettier `npm run format` and lint using eslint by `npm run lint`.
 
 ## Instructions for Weather Map API
 
@@ -17,7 +19,7 @@ This code contains an API key which is expired. Go to `src\features\city\service
 
 ## Weather Forecast
 
-This App has 2 features City weather and Profile page.
+This App has 2 features City weather and Profile page. By Default App will show list of Cities and allow you to visit profile page via an icon on top right hand corner.
 
 ### City Weather
 
@@ -33,9 +35,10 @@ There is a Profile page which allows you to Save/Update Name, Email and phone nu
 
 1. Time displayed are on City list are not accurate. times displayed on Hourly forecast should be fixed
 2. Make the site responsive
-3.
 
 ### To be Implemented
 
 1. Complete CRUD operations on City List
 2. Highlight current city on user's location and show 4 to 5 cities which user wants to add - use Google API perhaps for adding new cities ( good to have).
+3. Does not contain tests.
+4. Can be containerised using Docker or Podman.
