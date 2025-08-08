@@ -15,7 +15,7 @@
         :src="`https://openweathermap.org/img/wn/${currentIcon}@4x.png`"
         :alt="currentDesc"
       />
-      <div class="city-detail__current-temp">{{ Math.round(currentTemp) }}° C</div>
+      <div class="city-detail__current-temp">{{ currentTemp }}° C</div>
       <div class="city-detail__current-desc">{{ currentDesc }}</div>
       <p class="city-detail__current-updated">
         Last Update {{ lastUpdated }}
@@ -29,9 +29,9 @@
       </p>
     </section>
 
-    <section class="city-detail__hourly">
+    <section v-if="forecast" class="city-detail__hourly">
       <h3 class="city-detail__section-title">Hourly Forecast</h3>
-      <div class="city-detail__hourly-list">
+      <div v-if="forecast.list" class="city-detail__hourly-list">
         <div
           class="city-detail__hourly-card"
           v-for="(item, i) in forecast.list.slice(0, 4)"
@@ -48,7 +48,7 @@
       </div>
     </section>
 
-    <section class="city-detail__weekly">
+    <section v-if="forecast" class="city-detail__weekly">
       <h3 class="city-detail__section-title">Weekly Forecast</h3>
       <div class="city-detail__weekly-card" v-for="(group, i) in groupedByDay" :key="i">
         <div class="city-detail__weekly-card-left">
@@ -66,6 +66,13 @@
           <span class="city-detail__weekly-temp">{{ Math.round(group.temp) }}° C</span>
           <span class="city-detail__weekly-arrow">›</span>
         </div>
+      </div>
+    </section>
+
+    <section class="city-detail__error" v-if="!forecast">
+      Forecast and Weather API is unavailable, have you used a working API key?
+      <div>
+        Write to Author <span class="city-detail__error-email">sudeep.b.rane@gmail.com</span>
       </div>
     </section>
   </div>
@@ -88,7 +95,7 @@ const { forecast, loadForecast } = useWeatherForecast(city.value as City);
 
 const current = computed(() => forecast.value?.list?.[0]);
 
-const currentTemp = computed(() => (current.value ? current.value.main.temp : '--'));
+const currentTemp = computed(() => (current.value ? Math.round(current.value.main.temp) : '--'));
 const currentDesc = computed(() => current.value?.weather?.[0]?.description || '--');
 const currentIcon = computed(() => current.value?.weather?.[0]?.icon || '01d');
 const lastUpdated = computed(() => new Date().toLocaleTimeString());
