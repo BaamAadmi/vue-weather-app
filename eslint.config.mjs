@@ -1,14 +1,15 @@
 import js from '@eslint/js';
-import globals from 'globals';
-import tseslint from 'typescript-eslint';
 import pluginVue from 'eslint-plugin-vue';
 import { defineConfig } from 'eslint/config';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 export default defineConfig([
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,vue}'],
     plugins: { js },
     extends: ['js/recommended'],
+    ignores: ['node_modules/', 'dist/', '.eslintrc.js', '.prettierrc.js', 'vite.config.js'],
     languageOptions: { globals: globals.browser },
   },
   tseslint.configs.recommended,
